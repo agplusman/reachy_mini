@@ -29,6 +29,9 @@ By the end, participants should be able to explain:
 - Where the robot's computer is.
 - How the robot gets power.
 - How the robot connects to the teacher's or student's computer.
+- What motors create the body, antenna, and head movement.
+- What camera and microphone hardware let the robot sense the room.
+- What the controller board connects together inside the robot.
 - Why Wireless setup includes Wi-Fi.
 - Why Lite setup includes USB and wall power.
 - Why newer hardware is not automatically a better robot upgrade.
@@ -47,7 +50,7 @@ Let students answer before introducing the two versions. The point is to separat
 
    Point to the head, body, antennas, camera, microphone, and speaker.
 
-   Teacher language: "Both versions can move, look, listen, and speak. The visible robot is mostly the same learning object."
+   Teacher language: "Both versions can move, look, listen, and speak. The visible robot is mostly the same learning object: same size, same materials, same movement structure, and same sensing ideas."
 
 2. **Introduce the brain location**
 
@@ -94,7 +97,33 @@ Let students answer before introducing the two versions. The point is to separat
 
    Teacher language: "This is not a normal desktop computer, but it is a real computer. It runs software inside the robot."
 
-7. **Close with system thinking**
+7. **Name the actuators**
+
+   Explain that the robot's movement is built from Dynamixel motors:
+
+   - 1 custom Dynamixel motor in the base.
+   - 2 Dynamixel motors for the antennas.
+   - 6 Dynamixel motors in the Stewart platform for the head.
+
+   Teacher language: "The robot does not move because of one big motor. Different motors work together to create body rotation, antenna motion, and expressive head motion."
+
+8. **Name the sensors and media hardware**
+
+   Explain that the robot senses and communicates through camera, microphones, and speaker:
+
+   - 120 degree wide-angle 12MP autofocus camera.
+   - 4 digital microphones in a microphone array.
+   - 5W speaker.
+
+   Teacher language: "Seeing, hearing, and speaking are hardware features before they become software features."
+
+9. **Explain the controller board**
+
+   Explain that the controller board is the internal hub. It connects power, motors, camera, microphones, USB, and either onboard compute or laptop control.
+
+   Teacher language: "The controller board is where many separate robot systems meet."
+
+10. **Close with system thinking**
 
    Compare the robot to a team: computer, motors, sensors, power, network, and software.
 
@@ -108,6 +137,8 @@ Cards:
 
 - Built-in Raspberry Pi Compute Module 4.
 - Laptop runs the robot code.
+- Controller board.
+- Dynamixel motor TTL connection.
 - Wi-Fi setup.
 - USB-C data cable.
 - Wall power.
@@ -116,6 +147,8 @@ Cards:
 - Antennas.
 - Camera.
 - Microphone and speaker.
+- 4 PDM MEMS digital microphones.
+- 5W speaker.
 - Python SDK.
 - Reachy Mini Control.
 - Onboard software update.
@@ -128,6 +161,10 @@ Expected sorting:
 | Wi-Fi setup | USB-C data cable | Antennas |
 | Internal battery | Wall power | Camera |
 | Onboard software update |  | Microphone and speaker |
+|  |  | Controller board |
+|  |  | Dynamixel motor TTL connection |
+|  |  | 4 PDM MEMS digital microphones |
+|  |  | 5W speaker |
 |  |  | Python SDK |
 |  |  | Reachy Mini Control |
 
@@ -139,7 +176,9 @@ Ask:
 2. Which model depends on the laptop as its computer?
 3. Why does Wireless need Wi-Fi setup?
 4. Why does Lite need USB?
-5. Why should we not assume a newer Raspberry Pi can simply replace the robot's current computer?
+5. What motors create the three main movement systems?
+6. What hardware lets Reachy see, hear, and speak?
+7. Why should we not assume a newer Raspberry Pi can simply replace the robot's current computer?
 
 Strong answers:
 
@@ -147,6 +186,8 @@ Strong answers:
 - Lite uses the laptop as the main computer.
 - Wireless needs Wi-Fi so the teacher's computer and robot can talk over the network.
 - Lite needs USB so the laptop can send data directly to the robot.
+- The base, antennas, and Stewart platform each have their own Dynamixel motor setup.
+- Reachy sees with a wide-angle 12MP autofocus camera, hears with a 4-mic array, and speaks through a 5W speaker.
 - The robot is a complete system, so the board, power, drivers, OS image, camera/audio, daemon, and safety behavior all need to match.
 
 ### Teacher Wrap-Up
@@ -175,10 +216,81 @@ The simplest classroom analogy:
 | Computer | Built-in Raspberry Pi Compute Module 4 | External Mac or Linux computer |
 | Connection | Wi-Fi, plus direct access options | USB-C data cable to computer |
 | Power | Internal battery system | Wall power |
+| Mass | 1.475 kg | 1.350 kg |
 | Movement hardware | Head, body, antennas | Head, body, antennas |
 | Camera/audio | Camera, mic array, speaker | Camera, mic array, speaker |
 | Extra sensor | Includes an accelerometer/IMU | No accelerometer listed |
 | Best classroom framing | "Robot with onboard brain" | "Robot body controlled by laptop" |
+
+## Hardware Datasheet Details For Class
+
+### Shared Physical Structure
+
+Both versions have the same overall size and mechanical teaching value:
+
+- Dimensions: 30 x 20 x 15.5 cm when extended.
+- Materials: ABS, PC, aluminium, and steel.
+- Head: 6 degrees of freedom.
+- Body: 1 rotation.
+- Antennas: 1 rotation each, for 2 antennas.
+- Power input voltage: 6.8 to 7.6V.
+
+Teacher explanation: degrees of freedom describe the different ways a robot part can move. A 6 DOF head can make much richer expressions than a single hinge.
+
+### Shared Motors
+
+Both versions list the same motor layout:
+
+- Base: 1 custom Dynamixel XC330-M288-PG.
+- Antennas: 2 Dynamixel XL330-M077-T motors.
+- Stewart platform: 6 Dynamixel XL330-M288-T motors.
+
+Teacher explanation: the head uses a Stewart platform, which means several motors cooperate to create smooth multi-direction movement.
+
+### Shared Camera And Audio
+
+Both versions list:
+
+- Camera: Raspberry Pi Camera Module 3 wide angle.
+- Camera sensor: Sony IMX708.
+- Camera resolution: 12MP.
+- Camera behavior: autofocus.
+- Camera field of view: 120 degrees.
+- Microphone board: 4 PDM MEMS digital microphones.
+- Microphone board basis: Seeed Studio reSpeaker XMOS XVF3800.
+- Audio sample rate: 16 kHz max.
+- Microphone sensitivity: -26 dB FS.
+- Signal-to-noise ratio: 64 dBA SNR.
+- Speaker: 5W at 4 Ohms.
+
+Teacher explanation: the camera and microphone array are why the robot can be used for perception lessons, not only movement lessons.
+
+### Wireless-Specific Electronics
+
+Reachy Mini Wireless adds onboard compute and battery detail:
+
+- Control: Raspberry Pi Compute Module 4.
+- CM4 part listed: CM4104016.
+- CM4 configuration: Wi-Fi, 4GB RAM, 16GB flash.
+- Battery: LiFePO4, 2000mAh, 6.4V, 12.8Wh.
+- Battery protections: over-charge, over-discharge, over-current, short protection, and temperature sensor.
+- Wi-Fi antenna: 2.4-5GHz dual-band patch antenna, 2.79 dBi, omnidirectional.
+- CM4 controller board supply: 6.8 to 7.6V from the power board.
+- CM4 controller board connections: Dynamixel Motor TTL, camera CSI, microphone array, USB-C output.
+
+Teacher explanation: Wireless has more onboard responsibility. It carries compute, battery, Wi-Fi, and the software stack needed to behave as a networked robot.
+
+### Lite-Specific Electronics
+
+Reachy Mini Lite keeps the robot hardware but moves the main compute role to an external computer:
+
+- Control: USB-C connection for the computer interface.
+- Lite controller board supply: 6.8 to 7.6V from the power board.
+- Lite controller board connections: Dynamixel Motor TTL, camera CSI, microphone array, USB-C input.
+- The USB-C port is for data, not charging.
+- The robot is described as a device plugged into a computer.
+
+Teacher explanation: Lite is not "less robotics." It is a different architecture: the robot body is tethered to the computer that runs the control software.
 
 ## What Is The Same?
 
