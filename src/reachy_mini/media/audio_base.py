@@ -22,6 +22,10 @@ from typing import Optional
 import numpy as np
 import numpy.typing as npt
 
+from reachy_mini.media.audio_control_utils import (
+    WRITE_SETTLE_SECONDS,
+    AudioConfig,
+)
 from reachy_mini.media.audio_doa import AudioDoA
 from reachy_mini.media.gstreamer_utils import get_sample
 
@@ -101,6 +105,23 @@ class AudioBase(ABC):
 
         """
         return self._doa.get_DoA()
+
+    def apply_audio_config(
+        self,
+        config: AudioConfig,
+        *,
+        verify: bool = True,
+        write_settle_seconds: float = WRITE_SETTLE_SECONDS,
+    ) -> bool:
+        """Apply audio control parameters to the ReSpeaker."""
+        if self._doa._respeaker is None:
+            self.logger.warning("ReSpeaker device not found.")
+            return False
+        return self._doa._respeaker.apply_audio_config(
+            config,
+            verify=verify,
+            write_settle_seconds=write_settle_seconds,
+        )
 
     def cleanup(self) -> None:
         """Release shared resources (DoA USB device)."""
