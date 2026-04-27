@@ -110,6 +110,7 @@ Expected outcome: teachers can keep the code current while preserving Camp Reach
 Supporting class notes:
 
 - [Wireless vs Lite](wireless-vs-lite.md): teacher-ready explanation of the two Reachy Mini versions and how their setup differs.
+- [Reachy Mini docs map](reachy-mini-docs-map.md): crawled map of the official docs, organized for Camp Reachy lessons.
 
 ### Session 0: Teacher Setup
 
