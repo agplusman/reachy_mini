@@ -126,6 +126,51 @@ That means teacher instructions should normally include:
 - Robot system updates.
 - The address `reachy-mini.local` or the robot's IP address when talking to the robot over the network.
 
+## Student Q&A: What Version Of Raspberry Pi Is Inside?
+
+### Question
+
+What version of Raspberry Pi does Reachy Mini Wireless use?
+
+### Answer
+
+Reachy Mini Wireless uses a **Raspberry Pi Compute Module 4**, specifically listed in the official hardware datasheet as `CM4104016`.
+
+That means:
+
+- Raspberry Pi Compute Module 4.
+- Wi-Fi model.
+- 4GB RAM.
+- 16GB onboard eMMC flash storage.
+
+Teacher explanation: a Compute Module is not the same shape as the usual credit-card-sized Raspberry Pi board. It is an embedded version designed to plug into a custom robot controller board.
+
+## Student Q&A: How Does That Compare To Newer Raspberry Pi Models?
+
+### Question
+
+How does Reachy Mini's Raspberry Pi Compute Module 4 compare to newer Raspberry Pi models?
+
+### Answer
+
+Reachy Mini Wireless uses Pi 4-class embedded hardware. Newer Raspberry Pi 5 and Compute Module 5 hardware is faster and has newer CPU, GPU, memory, and I/O options.
+
+| Model | CPU class | RAM options | Storage style | Classroom summary |
+| --- | --- | --- | --- | --- |
+| Reachy Mini Wireless CM4 | Cortex-A72, 4-core, 1.5GHz | 4GB in this robot | 16GB onboard eMMC | Solid embedded robot controller |
+| Compute Module 5 | Cortex-A76, 4-core, 2.4GHz | Up to 16GB | Up to 64GB onboard eMMC | Newer, faster embedded module |
+| Raspberry Pi 5 | Cortex-A76, 4-core, 2.4GHz | Up to 16GB | microSD or SSD options | Newer hobby/development board |
+
+Plain English:
+
+- Reachy Mini Wireless is built around a **Compute Module 4**, which is roughly Raspberry Pi 4-generation hardware.
+- Raspberry Pi 5 and Compute Module 5 are newer and can be much faster for heavy computing.
+- That does not mean a teacher should plan to swap the robot to a newer Pi.
+
+Teacher caution: the robot is a complete hardware and software system. Its controller board, power design, camera/audio wiring, operating system image, drivers, and Reachy daemon support are built around the CM4 Wireless hardware. A newer Pi module is not automatically a drop-in upgrade.
+
+Teacher explanation: for Camp Reachy, the important lesson is not "newest chip wins." The important lesson is that robots are systems: compute, sensors, motors, power, software, and safety all have to work together.
+
 ## Sources
 
 - Reachy Mini README in this repository.
@@ -133,3 +178,6 @@ That means teacher instructions should normally include:
 - Official Reachy Mini Wireless hardware datasheet: https://huggingface.co/docs/reachy_mini/platforms/reachy_mini/hardware
 - Official Reachy Mini Lite setup guide: https://huggingface.co/docs/reachy_mini/platforms/reachy_mini_lite/get_started
 - Official Reachy Mini Lite hardware datasheet: https://huggingface.co/docs/reachy_mini/platforms/reachy_mini_lite/hardware
+- Raspberry Pi Compute Module 4 specs: https://www.raspberrypi.com/products/compute-module-4/
+- Raspberry Pi Compute Module 5 specs: https://www.raspberrypi.com/products/compute-module-5/
+- Raspberry Pi 5 specs: https://www.raspberrypi.com/products/raspberry-pi-5/
