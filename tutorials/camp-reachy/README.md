@@ -107,6 +107,10 @@ Expected outcome: teachers can keep the code current while preserving Camp Reach
 
 ## Planned Tutorial Sequence
 
+Supporting class notes:
+
+- [Wireless vs Lite](wireless-vs-lite.md): teacher-ready explanation of the two Reachy Mini versions and how their setup differs.
+
 ### Session 0: Teacher Setup
 
 Purpose: prepare the instructor laptop before students arrive.
