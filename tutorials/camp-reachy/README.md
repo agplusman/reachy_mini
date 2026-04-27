@@ -112,6 +112,7 @@ Supporting class notes:
 - [Wireless vs Lite](wireless-vs-lite.md): teacher-ready explanation of the two Reachy Mini versions and how their setup differs.
 - [Reachy Mini docs map](reachy-mini-docs-map.md): crawled map of the official docs, organized for Camp Reachy lessons.
 - [Installation walkthrough](installation-walkthrough.md): teacher and participant setup notes based on the official SDK installation guide.
+- [Assembly lesson](assembly.md): camp-ready physical build lesson grouped into teachable phases and checkpoints.
 
 ### Session 0: Teacher Setup
 
