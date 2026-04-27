@@ -4,6 +4,157 @@
 
 Participants should understand that Reachy Mini Wireless and Reachy Mini Lite share the same visible robot body and many of the same learning ideas, but they differ in where the computer lives and how the robot connects.
 
+## Lesson Plan: Teaching The Hardware Difference
+
+### Audience
+
+Use this lesson with beginner robotics students before they write robot code. It works best after students have seen the robot, but before they connect to it.
+
+### Time
+
+30 to 40 minutes.
+
+### Materials
+
+- Reachy Mini Wireless if available.
+- Reachy Mini Lite if available, or photos/spec sheets if not.
+- A laptop.
+- USB-C cable and wall power adapter for explaining Lite.
+- A whiteboard or shared screen.
+
+### Learning Outcomes
+
+By the end, participants should be able to explain:
+
+- Where the robot's computer is.
+- How the robot gets power.
+- How the robot connects to the teacher's or student's computer.
+- Why Wireless setup includes Wi-Fi.
+- Why Lite setup includes USB and wall power.
+- Why newer hardware is not automatically a better robot upgrade.
+
+### Teacher Opening
+
+Start with one simple question:
+
+> If a robot moves, sees, hears, and reacts, where does the thinking happen?
+
+Let students answer before introducing the two versions. The point is to separate the visible robot body from the computer that controls it.
+
+### Teaching Flow
+
+1. **Show the shared robot body**
+
+   Point to the head, body, antennas, camera, microphone, and speaker.
+
+   Teacher language: "Both versions can move, look, listen, and speak. The visible robot is mostly the same learning object."
+
+2. **Introduce the brain location**
+
+   Draw two boxes on the board:
+
+   - Wireless: robot body plus onboard computer.
+   - Lite: robot body plus laptop computer.
+
+   Teacher language: "Wireless carries its computer inside. Lite borrows the laptop's computer through a cable."
+
+3. **Introduce power**
+
+   Explain that Wireless has an internal battery system, while Lite uses wall power.
+
+   Teacher language: "Power is not the same as data. Power wakes the motors and electronics; data tells the robot what to do."
+
+4. **Introduce connection**
+
+   Explain that Wireless joins Wi-Fi, while Lite connects with USB-C data.
+
+   Teacher language: "Wireless needs a network conversation. Lite needs a direct cable conversation."
+
+5. **Connect to real setup steps**
+
+   Ask students to predict the first setup steps for each model.
+
+   Expected Wireless predictions:
+
+   - Turn it on.
+   - Find its Wi-Fi or connect it to Wi-Fi.
+   - Use Reachy Mini Control.
+   - Update the onboard system.
+
+   Expected Lite predictions:
+
+   - Plug in wall power.
+   - Connect USB-C to the computer.
+   - Open Reachy Mini Control.
+   - Run code from the laptop.
+
+6. **Discuss the Raspberry Pi Compute Module 4**
+
+   Explain that Wireless uses a Raspberry Pi Compute Module 4.
+
+   Teacher language: "This is not a normal desktop computer, but it is a real computer. It runs software inside the robot."
+
+7. **Close with system thinking**
+
+   Compare the robot to a team: computer, motors, sensors, power, network, and software.
+
+   Teacher language: "A robot is not only a motor or only a computer. A robot works when every part of the system agrees."
+
+### Participant Activity: Sort The Cards
+
+Give students a list of cards or board labels and ask them to place each under Wireless, Lite, or Both.
+
+Cards:
+
+- Built-in Raspberry Pi Compute Module 4.
+- Laptop runs the robot code.
+- Wi-Fi setup.
+- USB-C data cable.
+- Wall power.
+- Internal battery.
+- Head movement.
+- Antennas.
+- Camera.
+- Microphone and speaker.
+- Python SDK.
+- Reachy Mini Control.
+- Onboard software update.
+
+Expected sorting:
+
+| Wireless | Lite | Both |
+| --- | --- | --- |
+| Built-in Raspberry Pi Compute Module 4 | Laptop runs the robot code | Head movement |
+| Wi-Fi setup | USB-C data cable | Antennas |
+| Internal battery | Wall power | Camera |
+| Onboard software update |  | Microphone and speaker |
+|  |  | Python SDK |
+|  |  | Reachy Mini Control |
+
+### Checks For Understanding
+
+Ask:
+
+1. Which model has the computer inside the robot?
+2. Which model depends on the laptop as its computer?
+3. Why does Wireless need Wi-Fi setup?
+4. Why does Lite need USB?
+5. Why should we not assume a newer Raspberry Pi can simply replace the robot's current computer?
+
+Strong answers:
+
+- Wireless has the onboard computer.
+- Lite uses the laptop as the main computer.
+- Wireless needs Wi-Fi so the teacher's computer and robot can talk over the network.
+- Lite needs USB so the laptop can send data directly to the robot.
+- The robot is a complete system, so the board, power, drivers, OS image, camera/audio, daemon, and safety behavior all need to match.
+
+### Teacher Wrap-Up
+
+End with:
+
+> In Camp Reachy, we are using the Wireless path. That means we treat the robot as a small computer on the network, not just a device plugged into a laptop.
+
 ## Short Explanation For Teachers
 
 Reachy Mini comes in two main physical versions:
