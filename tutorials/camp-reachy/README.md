@@ -58,7 +58,26 @@ Python 3.13.5
 
 Why this matters: participants and teachers need a Python version that can install and run the Reachy Mini tools.
 
-### 5. Created a Fork Workflow
+### 5. Installed `uv` For Faster Python Setup
+
+We installed `uv` with Homebrew:
+
+```bash
+brew install uv
+uv --version
+```
+
+Expected outcome:
+
+```text
+uv 0.11.7
+```
+
+Why this matters: `uv` creates virtual environments and installs Python packages much faster than plain `pip`. Reachy Mini tools can fall back to `pip`, but `uv` makes repeated camp setup faster and more reliable.
+
+Teacher note: explain that `uv` is not the robot SDK itself. It is the tool that helps install the SDK and its dependencies quickly.
+
+### 6. Created a Fork Workflow
 
 The local Git repository now uses two remotes:
 
@@ -95,6 +114,7 @@ Purpose: prepare the instructor laptop before students arrive.
 Planned steps:
 
 - Confirm Python 3.10 or newer.
+- Install or verify `uv`.
 - Create a virtual environment.
 - Install the Reachy Mini SDK.
 - Clone reference apps and examples.
@@ -164,4 +184,3 @@ Planned steps:
 - Participant steps should be short, visible, and testable.
 - Troubleshooting notes should describe symptoms and fixes.
 - Keep examples safe for a classroom or camp setting.
-
